@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoPiano Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="player-container">
+        <h1>CryptoPiano Music Player</h1>
+        <div id="player"></div>
+        <div class="current-song">
+            Now Playing: <span id="current-title">Loading...</span>
+        </div>
+        <div class="controls">
+            <button id="prev-btn" title="Previous Song"><i class="fas fa-backward"></i></button>
+            <button id="play-pause-btn" title="Play/Pause"><i class="fas fa-play"></i></button>
+            <button id="next-btn" title="Next Song"><i class="fas fa-forward"></i></button>
+            <div class="volume-control">
+                <i class="fas fa-volume-up"></i>
+                <input type="range" id="volume-slider" min="0" max="100" value="100">
+            </div>
+        </div>
+        <div class="playlist-container">
+            <h2>Playlist (100 Tracks)</h2>
+            <ul id="playlist">
+                <!-- Playlist items will be injected here by JavaScript -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="playlist_data.js"></script>
+    <script src="script.js"></script>
+    <!-- YouTube IFrame Player API script -->
+    <script>
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    </script>
+</body>
+</html>
